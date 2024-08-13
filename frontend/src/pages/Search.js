@@ -83,7 +83,7 @@ const Search = () => {
     setIsModalOpen(false);
     handleSearch(); // Refrescar la tabla después de cerrar el modal
   };
-
+/*
   const handleDelete = async (vehicle) => {
     try {
       const response = await fetch(`http://localhost:5000/api/vehicles/${vehicle._id}`, {
@@ -101,8 +101,26 @@ const Search = () => {
     } catch (error) {
       alert(`Error: ${error.message}`);
     }
+  };*/
+  const handleDelete = async (vehicle) => {
+    try {
+      const response = await fetch(`https://registropv.onrender.com/api/vehicles/${vehicle._id}`, {  // Cambia localhost por tu dominio
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        setModalMessage('Eliminación exitosa');
+        setIsModalOpen(true);
+        setDeleteVehicle(null); // Cerrar el modal de eliminación
+        handleSearch(); // Refrescar la tabla después de la eliminación
+      } else {
+        alert('Error al eliminar el vehículo');
+      }
+    } catch (error) {
+      alert(`Error: ${error.message}`);
+    }
   };
-
+  
   const handleSave = () => {
     setModalMessage('Edición exitosa');
     setIsModalOpen(true);

@@ -16,7 +16,7 @@ const EditVehicle = ({ vehicle, onSave, onClose }) => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+/*
   const handleSave = async () => {
     try {
       const response = await fetch(`http://localhost:5000/api/vehicles/${vehicle._id}`, {
@@ -36,6 +36,26 @@ const EditVehicle = ({ vehicle, onSave, onClose }) => {
       alert(`Error: ${error.message}`);
     }
   };
+*/
+const handleSave = async () => {
+  try {
+    const response = await fetch(`https://registropv.onrender.com/api/vehicles/${vehicle._id}`, {  // Cambia localhost por tu dominio
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      onSave(); // Actualiza la lista de vehículos después de guardar
+    } else {
+      alert('Error al actualizar el vehículo');
+    }
+  } catch (error) {
+    alert(`Error: ${error.message}`);
+  }
+};
 
   return (
     <div className="modal-overlay">
