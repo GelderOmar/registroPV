@@ -33,7 +33,10 @@ const Search = () => {
   const handleSearch = async () => {
     const query = new URLSearchParams(filters).toString();
     try {
-      const response = await fetch(`http://localhost:5000/api/vehicles?${query}`);
+     /* const response = await fetch(`http://localhost:5000/api/vehicles?${query}`);*/
+     const response = await fetch(`https://registropv.onrender.com/api/vehicles?${query}`);
+
+      
       const data = await response.json();
       setResults(data);
     } catch (error) {
