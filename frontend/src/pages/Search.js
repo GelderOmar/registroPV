@@ -5,6 +5,14 @@ import DeleteVehicle from '../components/DeleteVehicle';
 import Modal from '../components/Modal'; // Importa el modal
 import '../styles/Search.css'; // Importa el archivo CSS
 import '../styles/global.css';
+const fieldLabels = {
+  vehicleType: 'Tipo de Vehículo',
+  dpi: 'DPI',
+  plate: 'Placa',
+  brand: 'Marca',
+  color: 'Color',
+  agreementNumber: 'No. Acuerdo',
+};
 
 const Search = () => {
   const [filters, setFilters] = useState({
@@ -132,6 +140,9 @@ const Search = () => {
     <div className="container">
       <h1>Buscar Vehículo</h1>
       <div className="grid">
+      
+
+
         <div>
           <label>Seleccionar Campo:</label>
           <select
@@ -140,6 +151,7 @@ const Search = () => {
             className="w-full p-2 border"
           >
             <option value="">--Todos--</option>
+            <option value="vehicleType">Tipo de Vehículo</option>
             <option value="dpi">DPI</option>
             <option value="plate">Placa</option>
             <option value="brand">Marca</option>
@@ -149,7 +161,7 @@ const Search = () => {
 
           {selectedField && (
             <div className="mt-4">
-              <label>{selectedField.charAt(0).toUpperCase() + selectedField.slice(1)}:</label>
+              <label>{fieldLabels[selectedField] || 'Selecciona un campo'}:</label>
               <input
                 type="text"
                 name={selectedField}
@@ -160,6 +172,8 @@ const Search = () => {
             </div>
           )}
         </div>
+
+
         <div>
           <label>Tipo de Vehículo:</label>
           <select
@@ -179,6 +193,9 @@ const Search = () => {
           </select>
         </div>
       </div>
+
+
+
       <button onClick={handleSearch} className="bg-blue-500 text-white p-2 mt-4">Buscar</button>
 
       <div className="table-container">
