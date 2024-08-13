@@ -1,0 +1,36 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro para toda la página */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: rgba(224, 231, 224, 0.993); /* Verde con transparencia solo en el cuadro */
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    color: rgb(0, 0, 0); /* Letra en color rojo */
+    font-weight: bold; /* Letra en negrita */
+  }
+  
+  .modal-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .modal-button:hover {
+    background-color: #2563eb;
+  }
+  

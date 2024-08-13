@@ -1,0 +1,17 @@
+body {
+    font-size: 14px; /* Ajusta el tamaño de fuente global a un 90% del tamaño estándar */
+    line-height: 1.6; /* Ajusta el espaciado entre líneas */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 90%; /* Reduce ligeramente el tamaño de los encabezados */
+  }
+  
+  input, select, button {
+    font-size: 90%; /* Ajusta el tamaño de fuente en inputs, selects y botones */
+  }
+  
+  .container {
+    max-width: 90%; /* Ajusta el ancho máximo de los contenedores principales */
+  }
+  
